@@ -583,27 +583,34 @@
 
   <!-- AA SELECTOR -->
   <div class="aa-selector">
-    <button class="aa-btn all active" onclick="showAA('all', this)">Vista consolidata</button>
-    <button class="aa-btn" onclick="showAA('aa1', this)">AA1 · 2026/27</button>
-    <button class="aa-btn" onclick="showAA('aa2', this)">AA2 · 2027/28</button>
-    <button class="aa-btn" onclick="showAA('aa3', this)">AA3 · 2028/29</button>
-    <button class="aa-btn" onclick="showAA('aa4', this)">AA4 · 2029/30</button>
+    <button class="aa-btn all active" onclick="showAA('all')">Vista consolidata</button>
+    <button class="aa-btn" onclick="showAA('aa1')">AA1 · 2026/27</button>
+    <button class="aa-btn" onclick="showAA('aa2')">AA2 · 2027/28</button>
+    <button class="aa-btn" onclick="showAA('aa3')">AA3 · 2028/29</button>
+    <button class="aa-btn" onclick="showAA('aa4')">AA4 · 2029/30</button>
   </div>
 
   <!-- CONSOLIDATED VIEW -->
   <div class="aa-panel active" id="panel-all">
+
     <div class="charts-grid">
       <div class="chart-card full">
         <div class="chart-title">Ricavi netti vs Costi totali — 4 Anni Accademici</div>
-        <div class="chart-container"><canvas id="chartMain"></canvas></div>
+        <div class="chart-container">
+          <canvas id="chartMain"></canvas>
+        </div>
       </div>
       <div class="chart-card">
         <div class="chart-title">Risultato operativo cumulato</div>
-        <div class="chart-container"><canvas id="chartCumulative"></canvas></div>
+        <div class="chart-container">
+          <canvas id="chartCumulative"></canvas>
+        </div>
       </div>
       <div class="chart-card">
         <div class="chart-title">Crescita studenti per Anno Accademico</div>
-        <div class="chart-container"><canvas id="chartStudents"></canvas></div>
+        <div class="chart-container">
+          <canvas id="chartStudents"></canvas>
+        </div>
       </div>
     </div>
 
@@ -620,45 +627,102 @@
         </thead>
         <tbody>
           <tr class="group-header"><td colspan="5">STUDENTI</td></tr>
-          <tr><td>Studenti in presenza Malta</td><td class="right">25</td><td class="right">145</td><td class="right">333</td><td class="right">596</td></tr>
-          <tr><td>Studenti online Italia</td><td class="right">—</td><td class="right">20</td><td class="right">28</td><td class="right">39</td></tr>
-          <tr class="subtotal"><td>Totale studenti</td><td class="right">25</td><td class="right">165</td><td class="right">361</td><td class="right">635</td></tr>
+          <tr>
+            <td>Studenti in presenza Malta</td>
+            <td class="right">25</td>
+            <td class="right">145</td>
+            <td class="right">333</td>
+            <td class="right">596</td>
+          </tr>
+          <tr>
+            <td>Studenti online Italia</td>
+            <td class="right">—</td>
+            <td class="right">20</td>
+            <td class="right">28</td>
+            <td class="right">39</td>
+          </tr>
+          <tr class="subtotal">
+            <td>Totale studenti</td>
+            <td class="right">25</td>
+            <td class="right">165</td>
+            <td class="right">361</td>
+            <td class="right">635</td>
+          </tr>
 
           <tr class="group-header"><td colspan="5">RICAVI</td></tr>
-          <tr><td>Ricavi lordi presenza</td><td class="right">€ 162.500</td><td class="right">€ 942.500</td><td class="right">€ 2.164.500</td><td class="right">€ 3.874.000</td></tr>
-          <tr><td>Ricavi lordi online IT</td><td class="right">—</td><td class="right">€ 50.000</td><td class="right">€ 70.000</td><td class="right">€ 97.500</td></tr>
-          <tr><td>Deduzioni agenti + sales (28% / 30%)</td><td class="right negative">− € 45.500</td><td class="right negative">− € 278.900</td><td class="right negative">− € 627.060</td><td class="right negative">− € 1.125.970</td></tr>
-          <tr class="subtotal"><td>Ricavi netti</td><td class="right positive">€ 117.000</td><td class="right positive">€ 713.600</td><td class="right positive">€ 1.607.440</td><td class="right positive">€ 2.845.530</td></tr>
+          <tr>
+            <td>Ricavi lordi presenza</td>
+            <td class="right">€ 162.500</td>
+            <td class="right">€ 942.500</td>
+            <td class="right">€ 2.164.500</td>
+            <td class="right">€ 3.874.000</td>
+          </tr>
+          <tr>
+            <td>Ricavi lordi online IT</td>
+            <td class="right">—</td>
+            <td class="right">€ 50.000</td>
+            <td class="right">€ 70.000</td>
+            <td class="right">€ 97.500</td>
+          </tr>
+          <tr>
+            <td>Deduzioni agenti + sales</td>
+            <td class="right negative">− € 45.500</td>
+            <td class="right negative">− € 278.900</td>
+            <td class="right negative">− € 627.060</td>
+            <td class="right negative">− € 1.125.970</td>
+          </tr>
+          <tr class="subtotal">
+            <td>Ricavi netti</td>
+            <td class="right positive">€ 117.000</td>
+            <td class="right positive">€ 713.600</td>
+            <td class="right positive">€ 1.607.440</td>
+            <td class="right positive">€ 2.845.530</td>
+          </tr>
 
-          <tr class="group-header"><td colspan="5">COSTI — STRUTTURA FISSA</td></tr>
-          <tr><td>Sede</td><td class="right">€ 33.000</td><td class="right">€ 36.000</td><td class="right">€ 36.000</td><td class="right">€ 36.000</td></tr>
-          <tr><td>LMS / controllo gestione</td><td class="right">€ 55.000</td><td class="right">€ 60.000</td><td class="right">€ 60.000</td><td class="right">€ 60.000</td></tr>
-          <tr><td>Software AI (D-ID, HeyGen, GPT…)</td><td class="right">€ 33.000</td><td class="right">€ 36.000</td><td class="right">€ 36.000</td><td class="right">€ 36.000</td></tr>
-          <tr><td>Commercialista / contabilità</td><td class="right">€ 16.500</td><td class="right">€ 18.000</td><td class="right">€ 18.000</td><td class="right">€ 18.000</td></tr>
-          <tr class="subtotal"><td>Subtotale struttura fissa</td><td class="right">€ 137.500</td><td class="right">€ 150.000</td><td class="right">€ 150.000</td><td class="right">€ 150.000</td></tr>
+          <tr class="group-header"><td colspan="5">COSTI</td></tr>
+          <tr>
+            <td>Struttura fissa (sede, LMS, software, amm.)</td>
+            <td class="right">€ 138.100</td>
+            <td class="right">€ 150.200</td>
+            <td class="right">€ 150.200</td>
+            <td class="right">€ 150.200</td>
+          </tr>
+          <tr>
+            <td>Team</td>
+            <td class="right">€ 600.000</td>
+            <td class="right">€ 843.000</td>
+            <td class="right">€ 663.000</td>
+            <td class="right">€ 753.000</td>
+          </tr>
+          <tr>
+            <td>Marketing (digitale + fiere ICEF)</td>
+            <td class="right">€ 253.000</td>
+            <td class="right">€ 256.000</td>
+            <td class="right">€ 256.000</td>
+            <td class="right">€ 256.000</td>
+          </tr>
+          <tr class="subtotal">
+            <td>Totale costi</td>
+            <td class="right negative">€ 991.100</td>
+            <td class="right negative">€ 1.249.200</td>
+            <td class="right negative">€ 1.069.200</td>
+            <td class="right negative">€ 1.159.200</td>
+          </tr>
 
-          <tr class="group-header"><td colspan="5">COSTI — TEAM</td></tr>
-          <tr><td>CEO / Head of Institute</td><td class="right">€ 135.000</td><td class="right">€ 135.000</td><td class="right">€ 135.000</td><td class="right">€ 135.000</td></tr>
-          <tr><td>Quality &amp; Admission Manager</td><td class="right">€ 36.000</td><td class="right">€ 36.000</td><td class="right">€ 36.000</td><td class="right">€ 36.000</td></tr>
-          <tr><td>Amministrazione</td><td class="right">€ 30.000</td><td class="right">€ 30.000</td><td class="right">€ 30.000</td><td class="right">€ 30.000</td></tr>
-          <tr><td>LMS Expert</td><td class="right">€ 25.000</td><td class="right">€ 25.000</td><td class="right">€ 25.000</td><td class="right">€ 25.000</td></tr>
-          <tr><td>Head of Didactics</td><td class="right">—</td><td class="right">€ 40.000</td><td class="right">€ 40.000</td><td class="right">€ 40.000</td></tr>
-          <tr><td>Student Office</td><td class="right">—</td><td class="right">€ 26.000</td><td class="right">€ 26.000</td><td class="right">€ 52.000</td></tr>
-          <tr><td>Sales (2 persone)</td><td class="right">€ 39.600</td><td class="right">€ 43.200</td><td class="right">€ 43.200</td><td class="right">€ 43.200</td></tr>
-          <tr><td>Docenti — produzione contenuti</td><td class="right">€ 165.000</td><td class="right">€ 180.000</td><td class="right">—</td><td class="right">—</td></tr>
-          <tr><td>Docenti — operativi (esami/ricevimento)</td><td class="right">€ 35.000</td><td class="right">€ 60.000</td><td class="right">€ 60.000</td><td class="right">€ 60.000</td></tr>
-          <tr><td>Tutor</td><td class="right">€ 140.000 <small style="color:var(--muted)">(5)</small></td><td class="right">€ 252.000 <small style="color:var(--muted)">(9)</small></td><td class="right">€ 252.000 <small style="color:var(--muted)">(9)</small></td><td class="right">€ 336.000 <small style="color:var(--muted)">(12)</small></td></tr>
-          <tr class="subtotal"><td>Subtotale team</td><td class="right">€ 605.600</td><td class="right">€ 827.200</td><td class="right">€ 647.200</td><td class="right">€ 757.200</td></tr>
-
-          <tr class="group-header"><td colspan="5">COSTI — MARKETING</td></tr>
-          <tr><td>Marketing digitale</td><td class="right">€ 33.000</td><td class="right">€ 36.000</td><td class="right">€ 36.000</td><td class="right">€ 36.000</td></tr>
-          <tr><td>Fiere B2B / ICEF</td><td class="right">€ 220.000</td><td class="right">€ 220.000</td><td class="right">€ 220.000</td><td class="right">€ 220.000</td></tr>
-          <tr class="subtotal"><td>Subtotale marketing</td><td class="right">€ 253.000</td><td class="right">€ 256.000</td><td class="right">€ 256.000</td><td class="right">€ 256.000</td></tr>
-
-          <tr class="total"><td>TOTALE COSTI</td><td class="right negative">€ 996.100</td><td class="right negative">€ 1.233.200</td><td class="right negative">€ 1.053.200</td><td class="right negative">€ 1.163.200</td></tr>
-          <tr class="total"><td>RICAVI NETTI</td><td class="right positive">€ 117.000</td><td class="right positive">€ 713.600</td><td class="right positive">€ 1.607.440</td><td class="right positive">€ 2.845.530</td></tr>
-          <tr class="total"><td>RISULTATO OPERATIVO</td><td class="right negative">− € 879.100</td><td class="right negative">− € 519.600</td><td class="right positive">+ € 554.240</td><td class="right positive">+ € 1.682.330</td></tr>
-          <tr class="total"><td>CUMULATO</td><td class="right negative">− € 879.100</td><td class="right negative">− € 1.398.700</td><td class="right negative">− € 844.460</td><td class="right positive">+ € 837.870</td></tr>
+          <tr class="total">
+            <td>RISULTATO OPERATIVO</td>
+            <td class="right negative">− € 874.100</td>
+            <td class="right negative">− € 535.600</td>
+            <td class="right positive">+ € 538.240</td>
+            <td class="right positive">+ € 1.686.330</td>
+          </tr>
+          <tr class="total">
+            <td>CUMULATO</td>
+            <td class="right negative">− € 874.100</td>
+            <td class="right negative">− € 1.409.700</td>
+            <td class="right negative">− € 871.460</td>
+            <td class="right positive">+ € 814.870</td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -670,7 +734,7 @@
       <div class="kpi-card">
         <div class="kpi-label">Studenti totali</div>
         <div class="kpi-value">25</div>
-        <div class="kpi-sub">10 online sett. '26 · 15 presenza feb. '27</div>
+        <div class="kpi-sub">10 online sett. + 15 presenza feb.</div>
       </div>
       <div class="kpi-card">
         <div class="kpi-label">Ricavi netti</div>
@@ -679,47 +743,40 @@
       </div>
       <div class="kpi-card">
         <div class="kpi-label">Risultato</div>
-        <div class="kpi-value" style="color:var(--red)">− € 879k</div>
+        <div class="kpi-value negative" style="color:var(--red)">− € 874k</div>
         <div class="kpi-sub">Anno di lancio e strutturazione</div>
       </div>
     </div>
-
     <div class="table-wrap">
       <table>
-        <thead><tr><th>Voce</th><th>Dettaglio</th><th class="right">Importo</th></tr></thead>
+        <thead><tr><th>Voce di costo</th><th>Frequenza</th><th class="right">Importo</th></tr></thead>
         <tbody>
-          <tr class="group-header"><td colspan="3">RICAVI</td></tr>
-          <tr><td>Intake sett. '26 — online (10 stud.)</td><td>€ 2.500 + € 4.000 upgrade feb.</td><td class="right">€ 65.000</td></tr>
-          <tr><td>Intake feb. '27 — presenza (15 stud.)</td><td>€ 6.500 cad.</td><td class="right">€ 97.500</td></tr>
-          <tr><td>Deduzioni agenti + sales (28%)</td><td></td><td class="right negative">− € 45.500</td></tr>
-          <tr class="subtotal"><td>Ricavi netti AA1</td><td></td><td class="right positive">€ 117.000</td></tr>
-
-          <tr class="group-header"><td colspan="3">COSTI — STRUTTURA FISSA</td></tr>
+          <tr class="group-header"><td colspan="3">STRUTTURA FISSA</td></tr>
           <tr><td>Sede</td><td>€ 3.000/mese × 11</td><td class="right">€ 33.000</td></tr>
           <tr><td>LMS / controllo gestione</td><td>€ 5.000/mese × 11</td><td class="right">€ 55.000</td></tr>
           <tr><td>Software AI (D-ID, HeyGen, GPT…)</td><td>€ 3.000/mese × 11</td><td class="right">€ 33.000</td></tr>
-          <tr><td>Commercialista / contabilità</td><td>€ 1.500/mese × 11</td><td class="right">€ 16.500</td></tr>
+          <tr><td>Commercialista</td><td>€ 1.500/mese × 11</td><td class="right">€ 16.500</td></tr>
           <tr class="subtotal"><td>Subtotale struttura</td><td></td><td class="right">€ 137.500</td></tr>
 
-          <tr class="group-header"><td colspan="3">COSTI — TEAM</td></tr>
-          <tr><td>CEO / Head of Institute</td><td>Annuo · da settembre</td><td class="right">€ 135.000</td></tr>
-          <tr><td>Quality &amp; Admission Manager</td><td>Annuo · da settembre</td><td class="right">€ 36.000</td></tr>
-          <tr><td>Amministrazione</td><td>Annuo · da settembre</td><td class="right">€ 30.000</td></tr>
-          <tr><td>LMS Expert</td><td>Annuo · da settembre</td><td class="right">€ 25.000</td></tr>
+          <tr class="group-header"><td colspan="3">TEAM</td></tr>
+          <tr><td>CEO / Head of Institute</td><td>Annuo</td><td class="right">€ 135.000</td></tr>
+          <tr><td>Quality & Admission Manager</td><td>Annuo</td><td class="right">€ 36.000</td></tr>
+          <tr><td>Amministrazione</td><td>Annuo</td><td class="right">€ 30.000</td></tr>
+          <tr><td>LMS Expert</td><td>Annuo</td><td class="right">€ 25.000</td></tr>
           <tr><td>Sales (2 persone × € 1.800/mese)</td><td>€ 3.600/mese × 11</td><td class="right">€ 39.600</td></tr>
           <tr><td>Docenti — produzione contenuti AA2</td><td>€ 15.000/mese × 11</td><td class="right">€ 165.000</td></tr>
           <tr><td>Docenti — operativi (esami/ricevimento)</td><td>€ 5.000/mese × 7 (gen→lug)</td><td class="right">€ 35.000</td></tr>
-          <tr><td>Tutor (5 unità × € 28.000)</td><td>1 da ott · +4 da gen '27</td><td class="right">€ 140.000</td></tr>
+          <tr><td>Tutor (5 unità × € 28.000)</td><td>Annuo</td><td class="right">€ 140.000</td></tr>
           <tr class="subtotal"><td>Subtotale team</td><td></td><td class="right">€ 605.600</td></tr>
 
-          <tr class="group-header"><td colspan="3">COSTI — MARKETING</td></tr>
+          <tr class="group-header"><td colspan="3">MARKETING</td></tr>
           <tr><td>Marketing digitale</td><td>€ 3.000/mese × 11</td><td class="right">€ 33.000</td></tr>
-          <tr><td>Fiere B2B / ICEF</td><td>Budget annuale</td><td class="right">€ 220.000</td></tr>
+          <tr><td>Fiere B2B / ICEF</td><td>Una tantum AA1</td><td class="right">€ 220.000</td></tr>
           <tr class="subtotal"><td>Subtotale marketing</td><td></td><td class="right">€ 253.000</td></tr>
 
-          <tr class="total"><td>TOTALE COSTI AA1</td><td></td><td class="right negative">€ 996.100</td></tr>
+          <tr class="total"><td>TOTALE COSTI AA1</td><td></td><td class="right">€ 996.100</td></tr>
           <tr class="total"><td>RICAVI NETTI AA1</td><td></td><td class="right positive">€ 117.000</td></tr>
-          <tr class="total"><td>RISULTATO AA1</td><td></td><td class="right" style="color:var(--red)">− € 879.100</td></tr>
+          <tr class="total"><td>RISULTATO AA1</td><td></td><td class="right negative">− € 879.100</td></tr>
         </tbody>
       </table>
     </div>
@@ -731,61 +788,29 @@
       <div class="kpi-card">
         <div class="kpi-label">Studenti totali</div>
         <div class="kpi-value">165</div>
-        <div class="kpi-sub">25 da AA1 · 120 nuovi · 20 online IT</div>
+        <div class="kpi-sub">+140 nuovi · 25 da AA1</div>
       </div>
       <div class="kpi-card">
         <div class="kpi-label">Ricavi netti</div>
         <div class="kpi-value">€ 713k</div>
-        <div class="kpi-sub">Lordo € 992.500</div>
+        <div class="kpi-sub">Lordo € 992.500 · deduzioni medie 28/30%</div>
       </div>
       <div class="kpi-card">
         <div class="kpi-label">Risultato</div>
-        <div class="kpi-value" style="color:var(--red)">− € 520k</div>
-        <div class="kpi-sub">Perdita in forte riduzione vs AA1</div>
+        <div class="kpi-value negative" style="color:var(--red)">− € 535k</div>
+        <div class="kpi-sub">Perdita in forte riduzione rispetto AA1</div>
       </div>
     </div>
-
     <div class="table-wrap">
       <table>
-        <thead><tr><th>Voce</th><th>Dettaglio</th><th class="right">Importo</th></tr></thead>
+        <thead><tr><th>Coorte studenti</th><th>N°</th><th class="right">Retta</th><th class="right">Lordo</th><th class="right">Netto</th></tr></thead>
         <tbody>
-          <tr class="group-header"><td colspan="3">RICAVI PER COORTE</td></tr>
-          <tr><td>Intake sett. '26 — 2° anno (10 stud.)</td><td>€ 6.500 cad. · presenza</td><td class="right">€ 65.000</td></tr>
-          <tr><td>Intake sett. '27 — 1° anno presenza (80 stud.)</td><td>€ 6.500 cad.</td><td class="right">€ 520.000</td></tr>
-          <tr><td>Intake sett. '27 — 1° anno online IT (20 stud.)</td><td>€ 2.500 cad.</td><td class="right">€ 50.000</td></tr>
-          <tr><td>Intake feb. '27 — 2° anno (15 stud.)</td><td>€ 6.500 cad. · da feb. '28</td><td class="right">€ 97.500</td></tr>
-          <tr><td>Intake feb. '28 — 1° anno presenza (40 stud.)</td><td>€ 6.500 cad. · da feb. '28</td><td class="right">€ 260.000</td></tr>
-          <tr><td>Deduzioni presenza (28%) + online IT (30%)</td><td></td><td class="right negative">− € 278.900</td></tr>
-          <tr class="subtotal"><td>Ricavi netti AA2</td><td></td><td class="right positive">€ 713.600</td></tr>
-
-          <tr class="group-header"><td colspan="3">COSTI — STRUTTURA FISSA</td></tr>
-          <tr><td>Sede</td><td>€ 3.000/mese × 12</td><td class="right">€ 36.000</td></tr>
-          <tr><td>LMS / controllo gestione</td><td>€ 5.000/mese × 12</td><td class="right">€ 60.000</td></tr>
-          <tr><td>Software AI (D-ID, HeyGen, GPT…)</td><td>€ 3.000/mese × 12</td><td class="right">€ 36.000</td></tr>
-          <tr><td>Commercialista / contabilità</td><td>€ 1.500/mese × 12</td><td class="right">€ 18.000</td></tr>
-          <tr class="subtotal"><td>Subtotale struttura</td><td></td><td class="right">€ 150.000</td></tr>
-
-          <tr class="group-header"><td colspan="3">COSTI — TEAM</td></tr>
-          <tr><td>CEO / Head of Institute</td><td>Annuo</td><td class="right">€ 135.000</td></tr>
-          <tr><td>Quality &amp; Admission Manager</td><td>Annuo</td><td class="right">€ 36.000</td></tr>
-          <tr><td>Amministrazione</td><td>Annuo</td><td class="right">€ 30.000</td></tr>
-          <tr><td>LMS Expert</td><td>Annuo</td><td class="right">€ 25.000</td></tr>
-          <tr><td>Head of Didactics</td><td>Annuo · nuovo da sett. '27</td><td class="right">€ 40.000</td></tr>
-          <tr><td>Student Office (1 persona)</td><td>Annuo · nuovo da sett. '27</td><td class="right">€ 26.000</td></tr>
-          <tr><td>Sales (2 persone × € 1.800/mese)</td><td>€ 3.600/mese × 12</td><td class="right">€ 43.200</td></tr>
-          <tr><td>Docenti — produzione contenuti AA3</td><td>€ 15.000/mese × 12</td><td class="right">€ 180.000</td></tr>
-          <tr><td>Docenti — operativi (esami/ricevimento)</td><td>€ 5.000/mese × 12</td><td class="right">€ 60.000</td></tr>
-          <tr><td>Tutor (9 unità × € 28.000)</td><td>+4 da sett. '27</td><td class="right">€ 252.000</td></tr>
-          <tr class="subtotal"><td>Subtotale team</td><td></td><td class="right">€ 827.200</td></tr>
-
-          <tr class="group-header"><td colspan="3">COSTI — MARKETING</td></tr>
-          <tr><td>Marketing digitale</td><td>€ 3.000/mese × 12</td><td class="right">€ 36.000</td></tr>
-          <tr><td>Fiere B2B / ICEF</td><td>Budget annuale</td><td class="right">€ 220.000</td></tr>
-          <tr class="subtotal"><td>Subtotale marketing</td><td></td><td class="right">€ 256.000</td></tr>
-
-          <tr class="total"><td>TOTALE COSTI AA2</td><td></td><td class="right negative">€ 1.233.200</td></tr>
-          <tr class="total"><td>RICAVI NETTI AA2</td><td></td><td class="right positive">€ 713.600</td></tr>
-          <tr class="total"><td>RISULTATO AA2</td><td></td><td class="right" style="color:var(--red)">− € 519.600</td></tr>
+          <tr><td>Intake sett. '26 — 2° anno</td><td>10</td><td class="right">€ 6.500</td><td class="right">€ 65.000</td><td class="right">€ 46.800</td></tr>
+          <tr><td>Intake sett. '27 — 1° anno presenza</td><td>80</td><td class="right">€ 6.500</td><td class="right">€ 520.000</td><td class="right">€ 374.400</td></tr>
+          <tr><td>Intake sett. '27 — 1° anno online IT</td><td>20</td><td class="right">€ 2.500</td><td class="right">€ 50.000</td><td class="right">€ 35.000</td></tr>
+          <tr><td>Intake feb. '27 — 2° anno</td><td>15</td><td class="right">€ 6.500</td><td class="right">€ 97.500</td><td class="right">€ 70.200</td></tr>
+          <tr><td>Intake feb. '28 — 1° anno presenza</td><td>40</td><td class="right">€ 6.500</td><td class="right">€ 260.000</td><td class="right">€ 187.200</td></tr>
+          <tr class="total"><td>TOTALE AA2</td><td>165</td><td></td><td class="right">€ 992.500</td><td class="right positive">€ 713.600</td></tr>
         </tbody>
       </table>
     </div>
@@ -797,7 +822,7 @@
       <div class="kpi-card">
         <div class="kpi-label">Studenti totali</div>
         <div class="kpi-value">361</div>
-        <div class="kpi-sub">165 da AA2 · 196 nuovi</div>
+        <div class="kpi-sub">+196 nuovi · 165 da AA2</div>
       </div>
       <div class="kpi-card">
         <div class="kpi-label">Ricavi netti</div>
@@ -806,54 +831,22 @@
       </div>
       <div class="kpi-card">
         <div class="kpi-label">Risultato</div>
-        <div class="kpi-value" style="color:var(--green)">+ € 554k</div>
+        <div class="kpi-value positive" style="color:var(--green)">+ € 538k</div>
         <div class="kpi-sub">Primo anno in utile operativo</div>
       </div>
     </div>
-
     <div class="table-wrap">
       <table>
-        <thead><tr><th>Voce</th><th>Dettaglio</th><th class="right">Importo</th></tr></thead>
+        <thead><tr><th>Coorte studenti</th><th>N°</th><th>Anno</th><th class="right">Lordo</th><th class="right">Netto</th></tr></thead>
         <tbody>
-          <tr class="group-header"><td colspan="3">RICAVI PER COORTE</td></tr>
-          <tr><td>Intake sett. '26 — 3° anno (10 stud.)</td><td>€ 6.500 cad.</td><td class="right">€ 65.000</td></tr>
-          <tr><td>Intake feb. '27 — 3° anno (15 stud.)</td><td>€ 6.500 cad. · da feb. '29</td><td class="right">€ 97.500</td></tr>
-          <tr><td>Intake sett. '27 — 2° anno (100 stud.)</td><td>€ 6.500 cad.</td><td class="right">€ 650.000</td></tr>
-          <tr><td>Intake feb. '28 — 2° anno (40 stud.)</td><td>€ 6.500 cad. · da feb. '29</td><td class="right">€ 260.000</td></tr>
-          <tr><td>Intake sett. '28 — 1° anno presenza (112 stud.)</td><td>€ 6.500 cad.</td><td class="right">€ 728.000</td></tr>
-          <tr><td>Intake sett. '28 — 1° anno online IT (28 stud.)</td><td>€ 2.500 cad.</td><td class="right">€ 70.000</td></tr>
-          <tr><td>Intake feb. '29 — 1° anno presenza (56 stud.)</td><td>€ 6.500 cad. · da feb. '29</td><td class="right">€ 364.000</td></tr>
-          <tr><td>Deduzioni presenza (28%) + online IT (30%)</td><td></td><td class="right negative">− € 627.060</td></tr>
-          <tr class="subtotal"><td>Ricavi netti AA3</td><td></td><td class="right positive">€ 1.607.440</td></tr>
-
-          <tr class="group-header"><td colspan="3">COSTI — STRUTTURA FISSA</td></tr>
-          <tr><td>Sede</td><td>€ 3.000/mese × 12</td><td class="right">€ 36.000</td></tr>
-          <tr><td>LMS / controllo gestione</td><td>€ 5.000/mese × 12</td><td class="right">€ 60.000</td></tr>
-          <tr><td>Software AI (D-ID, HeyGen, GPT…)</td><td>€ 3.000/mese × 12</td><td class="right">€ 36.000</td></tr>
-          <tr><td>Commercialista / contabilità</td><td>€ 1.500/mese × 12</td><td class="right">€ 18.000</td></tr>
-          <tr class="subtotal"><td>Subtotale struttura</td><td></td><td class="right">€ 150.000</td></tr>
-
-          <tr class="group-header"><td colspan="3">COSTI — TEAM</td></tr>
-          <tr><td>CEO / Head of Institute</td><td>Annuo</td><td class="right">€ 135.000</td></tr>
-          <tr><td>Quality &amp; Admission Manager</td><td>Annuo</td><td class="right">€ 36.000</td></tr>
-          <tr><td>Amministrazione</td><td>Annuo</td><td class="right">€ 30.000</td></tr>
-          <tr><td>LMS Expert</td><td>Annuo</td><td class="right">€ 25.000</td></tr>
-          <tr><td>Head of Didactics</td><td>Annuo</td><td class="right">€ 40.000</td></tr>
-          <tr><td>Student Office (1 persona)</td><td>Annuo</td><td class="right">€ 26.000</td></tr>
-          <tr><td>Sales (2 persone × € 1.800/mese)</td><td>€ 3.600/mese × 12</td><td class="right">€ 43.200</td></tr>
-          <tr><td>Docenti — produzione contenuti</td><td>Completati in AA2 — voce azzerata</td><td class="right">€ 0</td></tr>
-          <tr><td>Docenti — operativi (esami/ricevimento)</td><td>€ 5.000/mese × 12</td><td class="right">€ 60.000</td></tr>
-          <tr><td>Tutor (9 unità × € 28.000)</td><td>Invariati rispetto AA2</td><td class="right">€ 252.000</td></tr>
-          <tr class="subtotal"><td>Subtotale team</td><td></td><td class="right">€ 647.200</td></tr>
-
-          <tr class="group-header"><td colspan="3">COSTI — MARKETING</td></tr>
-          <tr><td>Marketing digitale</td><td>€ 3.000/mese × 12</td><td class="right">€ 36.000</td></tr>
-          <tr><td>Fiere B2B / ICEF</td><td>Budget annuale</td><td class="right">€ 220.000</td></tr>
-          <tr class="subtotal"><td>Subtotale marketing</td><td></td><td class="right">€ 256.000</td></tr>
-
-          <tr class="total"><td>TOTALE COSTI AA3</td><td></td><td class="right negative">€ 1.053.200</td></tr>
-          <tr class="total"><td>RICAVI NETTI AA3</td><td></td><td class="right positive">€ 1.607.440</td></tr>
-          <tr class="total"><td>RISULTATO AA3</td><td></td><td class="right positive">+ € 554.240</td></tr>
+          <tr><td>Intake sett. '26 — 3° anno</td><td>10</td><td>3°</td><td class="right">€ 65.000</td><td class="right">€ 46.800</td></tr>
+          <tr><td>Intake feb. '27 — 3° anno</td><td>15</td><td>3°</td><td class="right">€ 97.500</td><td class="right">€ 70.200</td></tr>
+          <tr><td>Intake sett. '27 — 2° anno</td><td>100</td><td>2°</td><td class="right">€ 650.000</td><td class="right">€ 468.000</td></tr>
+          <tr><td>Intake feb. '28 — 2° anno</td><td>40</td><td>2°</td><td class="right">€ 260.000</td><td class="right">€ 187.200</td></tr>
+          <tr><td>Intake sett. '28 — 1° anno presenza</td><td>112</td><td>1°</td><td class="right">€ 728.000</td><td class="right">€ 524.160</td></tr>
+          <tr><td>Intake sett. '28 — 1° anno online IT</td><td>28</td><td>1°</td><td class="right">€ 70.000</td><td class="right">€ 49.000</td></tr>
+          <tr><td>Intake feb. '29 — 1° anno presenza</td><td>56</td><td>1°</td><td class="right">€ 364.000</td><td class="right">€ 262.080</td></tr>
+          <tr class="total"><td>TOTALE AA3</td><td>361</td><td></td><td class="right">€ 2.234.500</td><td class="right positive">€ 1.607.440</td></tr>
         </tbody>
       </table>
     </div>
@@ -865,7 +858,7 @@
       <div class="kpi-card">
         <div class="kpi-label">Studenti totali</div>
         <div class="kpi-value">635</div>
-        <div class="kpi-sub">361 da AA3 · 274 nuovi</div>
+        <div class="kpi-sub">+274 nuovi · 361 da AA3</div>
       </div>
       <div class="kpi-card">
         <div class="kpi-label">Ricavi netti</div>
@@ -874,52 +867,42 @@
       </div>
       <div class="kpi-card">
         <div class="kpi-label">Risultato</div>
-        <div class="kpi-value" style="color:var(--green)">+ € 1,68M</div>
+        <div class="kpi-value positive" style="color:var(--green)">+ € 1,68M</div>
         <div class="kpi-sub">Break-even cumulato raggiunto</div>
       </div>
     </div>
-
     <div class="table-wrap">
       <table>
-        <thead><tr><th>Voce</th><th>Dettaglio</th><th class="right">Importo</th></tr></thead>
+        <thead><tr><th>Voce di costo</th><th class="right">Importo AA4</th><th>Note</th></tr></thead>
         <tbody>
-          <tr class="group-header"><td colspan="3">RICAVI PER COORTE</td></tr>
-          <tr><td>Coorti AA1+AA2+AA3 — anni 2°/3° (322 stud.)</td><td>€ 6.500 cad. · presenza</td><td class="right">€ 2.093.000</td></tr>
-          <tr><td>Online IT avanzati (39 stud.)</td><td>€ 2.500 cad.</td><td class="right">€ 97.500</td></tr>
-          <tr><td>Intake sett. '29 — 1° anno presenza (157 stud.)</td><td>€ 6.500 cad.</td><td class="right">€ 1.020.500</td></tr>
-          <tr><td>Intake sett. '29 — 1° anno online IT (39 stud.)</td><td>€ 2.500 cad.</td><td class="right">€ 97.500 <small style="color:var(--muted)">(inclusi sopra)</small></td></tr>
-          <tr><td>Intake feb. '30 — 1° anno presenza (78 stud.)</td><td>€ 6.500 cad.</td><td class="right">€ 507.000</td></tr>
-          <tr><td>Deduzioni presenza (28%) + online IT (30%)</td><td></td><td class="right negative">− € 1.125.970</td></tr>
-          <tr class="subtotal"><td>Ricavi netti AA4</td><td></td><td class="right positive">€ 2.845.530</td></tr>
+          <tr class="group-header"><td colspan="3">STRUTTURA FISSA</td></tr>
+          <tr><td>Sede</td><td class="right">€ 36.000</td><td>€ 3.000/mese</td></tr>
+          <tr><td>LMS / controllo gestione</td><td class="right">€ 60.000</td><td>€ 5.000/mese</td></tr>
+          <tr><td>Software AI</td><td class="right">€ 36.000</td><td>€ 3.000/mese</td></tr>
+          <tr><td>Commercialista</td><td class="right">€ 18.000</td><td>€ 1.500/mese</td></tr>
+          <tr class="subtotal"><td>Subtotale struttura</td><td class="right">€ 150.000</td><td></td></tr>
 
-          <tr class="group-header"><td colspan="3">COSTI — STRUTTURA FISSA</td></tr>
-          <tr><td>Sede</td><td>€ 3.000/mese × 12</td><td class="right">€ 36.000</td></tr>
-          <tr><td>LMS / controllo gestione</td><td>€ 5.000/mese × 12</td><td class="right">€ 60.000</td></tr>
-          <tr><td>Software AI (D-ID, HeyGen, GPT…)</td><td>€ 3.000/mese × 12</td><td class="right">€ 36.000</td></tr>
-          <tr><td>Commercialista / contabilità</td><td>€ 1.500/mese × 12</td><td class="right">€ 18.000</td></tr>
-          <tr class="subtotal"><td>Subtotale struttura</td><td></td><td class="right">€ 150.000</td></tr>
+          <tr class="group-header"><td colspan="3">TEAM</td></tr>
+          <tr><td>CEO / Head of Institute</td><td class="right">€ 135.000</td><td></td></tr>
+          <tr><td>Quality & Admission Manager</td><td class="right">€ 36.000</td><td></td></tr>
+          <tr><td>Amministrazione</td><td class="right">€ 30.000</td><td></td></tr>
+          <tr><td>LMS Expert</td><td class="right">€ 25.000</td><td></td></tr>
+          <tr><td>Head of Didactics</td><td class="right">€ 40.000</td><td></td></tr>
+          <tr><td>Student Office (2 persone)</td><td class="right">€ 52.000</td><td>+1 da AA4</td></tr>
+          <tr><td>Sales (2 persone)</td><td class="right">€ 43.200</td><td>€ 3.600/mese</td></tr>
+          <tr><td>Docenti operativi (esami/ricevimento)</td><td class="right">€ 60.000</td><td>€ 5.000/mese</td></tr>
+          <tr><td>Docenti produzione contenuti</td><td class="right">€ 0</td><td>Contenuti completati</td></tr>
+          <tr><td>Tutor (12 unità × € 28.000)</td><td class="right">€ 336.000</td><td>+3 da AA4</td></tr>
+          <tr class="subtotal"><td>Subtotale team</td><td class="right">€ 757.200</td><td></td></tr>
 
-          <tr class="group-header"><td colspan="3">COSTI — TEAM</td></tr>
-          <tr><td>CEO / Head of Institute</td><td>Annuo</td><td class="right">€ 135.000</td></tr>
-          <tr><td>Quality &amp; Admission Manager</td><td>Annuo</td><td class="right">€ 36.000</td></tr>
-          <tr><td>Amministrazione</td><td>Annuo</td><td class="right">€ 30.000</td></tr>
-          <tr><td>LMS Expert</td><td>Annuo</td><td class="right">€ 25.000</td></tr>
-          <tr><td>Head of Didactics</td><td>Annuo</td><td class="right">€ 40.000</td></tr>
-          <tr><td>Student Office (2 persone)</td><td>Annuo · +1 persona da AA4</td><td class="right">€ 52.000</td></tr>
-          <tr><td>Sales (2 persone × € 1.800/mese)</td><td>€ 3.600/mese × 12</td><td class="right">€ 43.200</td></tr>
-          <tr><td>Docenti — produzione contenuti</td><td>Voce azzerata — tutti i contenuti pronti</td><td class="right">€ 0</td></tr>
-          <tr><td>Docenti — operativi (esami/ricevimento)</td><td>€ 5.000/mese × 12</td><td class="right">€ 60.000</td></tr>
-          <tr><td>Tutor (12 unità × € 28.000)</td><td>+3 unità da AA4</td><td class="right">€ 336.000</td></tr>
-          <tr class="subtotal"><td>Subtotale team</td><td></td><td class="right">€ 757.200</td></tr>
+          <tr class="group-header"><td colspan="3">MARKETING</td></tr>
+          <tr><td>Marketing digitale</td><td class="right">€ 36.000</td><td>€ 3.000/mese</td></tr>
+          <tr><td>Fiere B2B / ICEF</td><td class="right">€ 220.000</td><td>Costante ogni AA</td></tr>
+          <tr class="subtotal"><td>Subtotale marketing</td><td class="right">€ 256.000</td><td></td></tr>
 
-          <tr class="group-header"><td colspan="3">COSTI — MARKETING</td></tr>
-          <tr><td>Marketing digitale</td><td>€ 3.000/mese × 12</td><td class="right">€ 36.000</td></tr>
-          <tr><td>Fiere B2B / ICEF</td><td>Budget annuale costante</td><td class="right">€ 220.000</td></tr>
-          <tr class="subtotal"><td>Subtotale marketing</td><td></td><td class="right">€ 256.000</td></tr>
-
-          <tr class="total"><td>TOTALE COSTI AA4</td><td></td><td class="right negative">€ 1.163.200</td></tr>
-          <tr class="total"><td>RICAVI NETTI AA4</td><td></td><td class="right positive">€ 2.845.530</td></tr>
-          <tr class="total"><td>RISULTATO AA4</td><td></td><td class="right positive">+ € 1.682.330</td></tr>
+          <tr class="total"><td>TOTALE COSTI AA4</td><td class="right">€ 1.163.200</td><td></td></tr>
+          <tr class="total"><td>RICAVI NETTI AA4</td><td class="right positive">€ 2.845.530</td><td></td></tr>
+          <tr class="total"><td>RISULTATO AA4</td><td class="right positive">+ € 1.682.330</td><td></td></tr>
         </tbody>
       </table>
     </div>
@@ -1003,11 +986,11 @@
 
 <script>
   // AA SELECTOR
-  function showAA(aa, btn) {
+  function showAA(aa) {
     document.querySelectorAll('.aa-panel').forEach(p => p.classList.remove('active'));
     document.querySelectorAll('.aa-btn').forEach(b => b.classList.remove('active'));
     document.getElementById('panel-' + aa).classList.add('active');
-    btn.classList.add('active');
+    event.target.classList.add('active');
   }
 
   // NAV SCROLL SPY
